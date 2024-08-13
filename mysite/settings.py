@@ -28,6 +28,13 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'about',
+    'account',
+    'debug_toolbar',
+    'services',
+    'teams',
+    'works',
+    'photos',
+    'contact',
 ]
 
 MIDDLEWARE = [
@@ -38,8 +45,15 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
+    'account.middleware.SaveIPAddressMiddleware'
 ]
-
+ROOT_URLCONF = 'portfolio.urls'
+AUTH_USER_MODEL = 'account.User'
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
+ACCOUNT_USER_MODEL_USERNAME_FIELD = None
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_USERNAME_REQUIRED = False
 ROOT_URLCONF = 'mysite.urls'
 
 TEMPLATES = [

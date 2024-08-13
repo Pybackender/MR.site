@@ -1,0 +1,36 @@
+{% load static %}
+<div class="site-section" id="about-section">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 mb-5">
+          <img src="{% static 'assets/web/images/glint_about_1.jpg'%}" alt="Free Website Template by Free-Template.co" class="img-fluid">
+        </div>
+        {% for i in about %}
+        <div class="col-lg-5 ml-auto section-title">
+          <span class="sub-title mb-2 d-block">Acquaint Us</span>
+          <h2 class="title text-primary mb-3">About us</h2>
+          <p class="mb-4">{{ i.content }}</p>
+
+
+          <div class="d-flex">
+            <ul class="list-unstyled ul-check success mr-5">
+              <li>{{ i.position }}</li>
+              <li>{{ i.position1 }}</li>
+              <li>{{ i.position2 }}</li>
+
+            </ul>
+            <ul class="list-unstyled ul-check success">
+
+              <li> {{ i.position3 }}</li>
+              <li>{{ i.position4 }}</li>
+              <li>{{ i.position5 }}</li>
+            </ul>
+          </div>
+          <p><a data-fancybox data-ratio="2" href="{{ i.video }}"
+              class="d-flex align-items-center"><span class="icon-play_circle_outline h4 m-0 mr-2"></span> <span>Watch
+                the video</span></a></p>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div> <!-- .END site-section -->

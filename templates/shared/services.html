@@ -1,0 +1,22 @@
+{% load static %}
+<div class="site-section" id="what-we-do-section">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-lg-6 section-title">
+                <span class="sub-title mb-2 d-block">What We Do</span>
+                <h2 class="title text-primary">Far far away, behind the word mountains far from the countries</h2>
+            </div>
+        </div>
+        <div class="row">
+            {% for i in service %}
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="service h-100">
+                    <h3>{{ i.subject }}</h3>
+                    <p>{{ i.content }}</p>
+                    <p><a href="#" class="readmore">Learn more</a></p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div> <!-- END .site-section -->

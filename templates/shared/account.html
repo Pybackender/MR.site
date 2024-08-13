@@ -1,0 +1,30 @@
+{% load static %}
+{% for i in user %}
+<div class="site-blocks-cover" id="home-section">
+    <div class="img-wrap">
+      <div class="owl-carousel slide-one-item hero-slider">
+        <div class="slide">
+          
+          <img src="{% if i.avatar %}{{ i.avatar.url }}{% else %}{% static 'assets/img/no_image.png' %}{% endif %}" alt="Free Website Template by Free-Template.co">
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 ml-auto align-self-center">
+          <div class="intro">
+            <div class="heading">
+              <h1>{{ i.title }}</h1>
+            </div>
+            <div class="text">
+              <p class="sub-text mb-5">{{ i.about }} <a
+                  href="https://free-template.co/" target="_blank">Free-Template.co</a></p>
+              <p><a href="/#contact-section" target="_blank" class="btn btn-outline-primary btn-md">Start a
+                  project</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
