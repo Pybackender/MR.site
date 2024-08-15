@@ -1,11 +1,17 @@
 from django.contrib import admin
-from .models import About
+from .models import About, Skill
 # Register your models here.
+
+
+@admin.register(Skill)
+class SkillAdmin(admin.ModelAdmin):
+    prepopulated_fields = {"slug": ("skill",)}  # Update to match Skill model
+    list_display = ('title','skill', 'slug')
 
 
 @admin.register(About)
 class Aboutadmin(admin.ModelAdmin):
-    list_display = ['title', 'slug', 'content', 'avatar','video','position','position1','position2','position3','position4','position5']
+    list_display = ['title', 'content', 'avatar', 'video']
     prepopulated_fields = {'slug': ('title',)}
 
 

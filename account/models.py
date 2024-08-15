@@ -57,6 +57,12 @@ class User(AbstractUser):
     avatar = models.ImageField(
         upload_to="avatar/%Y/%m/%d", null=True, blank=True)
     about = models.CharField(max_length=500)
+    call_number= models.IntegerField(null=True,blank=True)
+    instagram = models.URLField(blank=True, null=True)
+    github = models.URLField(blank=True, null=True)
+    linkedin = models.URLField(blank=True, null=True)
+    youtube = models.URLField(blank=True, null=True)
+
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = []
 

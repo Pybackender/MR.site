@@ -5,7 +5,7 @@ from painless.models.actions import ExportMixin, PostableMixin
 
 @admin.register(Contact)
 class ContactAdmin(admin.ModelAdmin,PostableMixin,ExportMixin):
-    list_display = ['fristname','lastname', 'email', 'created']
+    list_display = ['firstname','lastname', 'email', 'created']
     list_filter = ['created']
     search_fields = ['email']
 

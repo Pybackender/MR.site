@@ -4,8 +4,8 @@ from painless.models.mixins import TimeStampedMixin
 
 
 class Contact(TimeStampedMixin):
-    fristname = models.CharField(max_length=128)
-    lastname = models.CharField(max_length=128)
+    firstname = models.CharField(max_length=128,null=True,blank=True)
+    lastname = models.CharField(max_length=128,null=True,blank=True)
     email = models.EmailField(
                               validators=[validate_email])
     message = models.TextField()

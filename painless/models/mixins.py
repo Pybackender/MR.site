@@ -16,6 +16,7 @@ class OrganizedMixin(TimeStampedMixin):
     class Status(models.IntegerChoices):
         SEND = 1, 'Send'
         CANCELLED = 2, 'Cancel'
+        
     title = models.CharField(
         max_length=128, unique_for_month='published_at', help_text="The text must be unique")
     slug = models.CharField(max_length=128, unique_for_month='published_at',)

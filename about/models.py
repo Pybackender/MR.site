@@ -1,17 +1,23 @@
 from django.db import models
-from painless.models.mixins import OrganizedMixin
+
+class Skill(models.Model):
+    title = models.CharField(max_length=125)
+    skill = models.CharField(max_length=225, null=True, blank=True)
+    slug = models.SlugField(max_length=125)
+
+    class Meta:
+        verbose_name = ('skill')
+        verbose_name_plural = ('skills')
+
+    def __str__(self):
+        return self.skill
 
 
-class About(OrganizedMixin):
-    avatar = models.ImageField(
-        upload_to="avatar/%Y/%m/%d", null=True, blank=True)
-    position = models.CharField(max_length=225, null=True, blank=True)
-    position1 = models.CharField(max_length=225, null=True, blank=True)
-    position2 = models.CharField(max_length=225, null=True, blank=True)
-    position3 = models.CharField(max_length=225, null=True, blank=True)
-    position4 = models.CharField(max_length=225, null=True, blank=True)
-    position5 = models.CharField(max_length=225, null=True, blank=True)
-    content = models.CharField(max_length=500, null=True, blank=True)
+class About(models.Model):
+    title = models.CharField(max_length=125)
+    slug = models.CharField(max_length=125)
+    content = models.CharField(max_length=500,null=True,blank=True)
+    avatar = models.ImageField(upload_to="avatar/%Y/%m/%d", null=True, blank=True)
     video = models.URLField(null=True, blank=True)
 
     class Meta:
@@ -19,4 +25,4 @@ class About(OrganizedMixin):
         verbose_name_plural = ('abouts')
 
     def __str__(self):
-        return self.title
+        return self.title  # Adjust this to return a valid field

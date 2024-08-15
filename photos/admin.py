@@ -6,4 +6,3 @@ from photos.models import Photo
 @admin.register(Photo)
 class photoadmin(admin.ModelAdmin):
     list_display = ['title','image','published_at']
-    prepopulated_fields = {'slug': ('title',)}
